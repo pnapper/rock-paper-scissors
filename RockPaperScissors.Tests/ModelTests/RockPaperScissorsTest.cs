@@ -43,14 +43,42 @@ namespace RockPaperScissors.Tests
       //Arrange
       Game Player1 = new Game("Patrick", "Scissors");
       Game Player2 = new Game("Daniel", "Scissors");
-      string _thisGames = Game.ComparePlay();
 
       //Act
-      // string result = _thisGames.ComparePlay();
+      string _thisGames = Game.ComparePlay();
 
       //Assert
-      Console.Write(_thisGames);
+      Console.WriteLine("Scissors v. Scissors result: " + _thisGames);
     }
+    //Test for Player 1 wins with Scissors over Paper.
+
+    [TestMethod]
+    public void ComparePlay_ComparePlayersPlay_PlayerOneWin()
+    {
+      //Arrange
+      Game Player1 = new Game("Patrick", "Scissors");
+      Game Player2 = new Game("Daniel", "Paper");
+
+      //Act
+      string _thisGames = Game.ComparePlay();
+
+      //Assert
+      Console.WriteLine("Scissors v. Paper result: " + _thisGames);
+    }
+    [TestMethod]
+    public void ComparePlay_ComparePlayersPlay_PlayerTwoWin()
+    {
+      //Arrange
+      Game Player1 = new Game("Patrick", "Scissors");
+      Game Player2 = new Game("Daniel", "Rock");
+
+      //Act
+      string _thisGames = Game.ComparePlay();
+
+      //Assert
+      Console.WriteLine("Scissors v. Rock result: " + _thisGames);
+    }
+
     public void Dispose()
     {
       Game.ClearAll();

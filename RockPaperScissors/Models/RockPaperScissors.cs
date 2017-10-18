@@ -34,6 +34,8 @@ namespace RockPaperScissors.Models
     {
      string Player1Play = _games[0].GetPlayerPlay();
      string Player2Play = _games[1].GetPlayerPlay();
+     string Player1Name = _games[0].GetPlayerName();
+     string Player2Name = _games[1].GetPlayerName();
      string result = "game on";
 
      if (Player1Play == Player2Play)
@@ -44,33 +46,33 @@ namespace RockPaperScissors.Models
      {
        if (Player2Play == "Scissors")
        {
-         result = "Player 1 Wins";
+         result = Player1Name + " Wins";
        }
        else if (Player2Play == "Paper")
        {
-         result = "Player 2 Wins";
+         result = Player2Name + " Wins";
        }
      }
      if (Player1Play == "Paper")
      {
        if (Player2Play == "Rock")
        {
-         result = "Player 1 Wins";
+         result = Player1Name + " Wins";
        }
        else if (Player2Play == "Scissors")
        {
-         result = "Player 2 Wins";
+         result = Player2Name + " Wins";
        }
      }
      if (Player1Play == "Scissors")
      {
        if (Player2Play == "Paper")
        {
-         result = "Player 1 Wins";
+         result = Player1Name + " Wins";
        }
        else if (Player2Play == "Rock")
        {
-         result = "Player 2 Wins";
+         result = Player2Name + " Wins";
        }
      }
      return result;
