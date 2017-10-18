@@ -7,8 +7,9 @@ namespace RockPaperScissors.Tests
 {
 
   [TestClass]
-  public class GameTest
+  public class GameTest : IDisposable
   {
+
     //Creating a test case to check if 2 objects with name and play properties are created
     [TestMethod]
     public void GetPlayerName_ReturnResult_Name()
@@ -34,7 +35,25 @@ namespace RockPaperScissors.Tests
       Console.Write(Player2Name);
       Console.Write("; Player2's Play: ");
       Console.WriteLine(Player2Play);
+    }
+    //Test for Player 1 equals to Player 2 play ie. Draw Condition
+    [TestMethod]
+    public void ComparePlay_ComparePlayersPlay_Draw()
+    {
+      //Arrange
+      Game Player1 = new Game("Patrick", "Scissors");
+      Game Player2 = new Game("Daniel", "Scissors");
+      string _thisGames = Game.ComparePlay();
 
+      //Act
+      // string result = _thisGames.ComparePlay();
+
+      //Assert
+      Console.Write(_thisGames);
+    }
+    public void Dispose()
+    {
+      Game.ClearAll();
     }
   }
 }
