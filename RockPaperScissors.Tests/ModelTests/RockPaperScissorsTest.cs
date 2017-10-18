@@ -78,6 +78,24 @@ namespace RockPaperScissors.Tests
       //Assert
       Console.WriteLine("Scissors v. Rock result: " + _thisGames);
     }
+    [TestMethod]
+    public void SetPlayerTwoPlay_PlayerPlayRecorded_NotNull()
+    {
+      //Arrange
+      Game Player1 = new Game("Patrick");
+      Game Player2 = new Game("Daniel");
+      List<Game> _thisGames = Game.GetGames();
+
+      //Act
+      Game.SetPlayerOnePlay("Scissors");
+      Game.SetPlayerTwoPlay("Rock");
+
+
+      //Assert
+      Console.WriteLine("Patrick's Play: " + _thisGames[0].GetPlayerPlay());
+      Console.WriteLine("Daniel's Play: " + _thisGames[1].GetPlayerPlay());
+
+    }
 
     public void Dispose()
     {

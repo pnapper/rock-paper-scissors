@@ -10,7 +10,7 @@ namespace RockPaperScissors.Models
     private string _play;
     private static List<Game> _games = new List<Game> {};
 
-    public Game(string name, string play)
+    public Game(string name, string play = "null")
     {
       _name = name;
       _play = play;
@@ -25,7 +25,22 @@ namespace RockPaperScissors.Models
     {
       return _play;
     }
-
+    public static Game GetPlayerOne()
+    {
+      return _games[0];
+    }
+    public static Game GetPlayerTwo()
+    {
+      return _games[1];
+    }
+    public static void SetPlayerOnePlay(string newPlay)
+    {
+      _games[0]._play = newPlay;
+    }
+    public static void SetPlayerTwoPlay(string newPlay)
+    {
+      _games[1]._play = newPlay;
+    }
     public static List<Game> GetGames()
     {
       return _games;

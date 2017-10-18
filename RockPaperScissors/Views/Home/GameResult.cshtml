@@ -1,0 +1,13 @@
+<h1>Results:</h1>
+<ul>
+  <li>@Model[0].GetPlayerName(): @Model[0].GetPlayerPlay()</li>
+  <li>@Model[1].GetPlayerName(): @Model[1].GetPlayerPlay()</li>
+  @* @foreach (var play in gamesList)
+  {
+    <li>@play.GetPlayerName(): @play.GetPlayerPlay()</li>
+  } *@
+</ul>
+@* <h2>Game Result: @Model.ComparePlay()</h2> *@
+
+<a href="/PlayerOneTurn">Play Another Round</a>
+<a href="/">New Players</a>
