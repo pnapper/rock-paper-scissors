@@ -8,7 +8,12 @@
     <li>@play.GetPlayerName(): @play.GetPlayerPlay()</li>
   } *@
 </ul>
-<h2>Game Result: @Model</h2>
+<h3>Player One: @Model["p1Name"]</h3>
+<h3>Player One Play: @Model["p1Play"]</h3>
+<h3>Player Two: @Model["p2Name"]</h3>
+<h3>Player Two Play: @Model["p2Play"]</h3>
+
+<h2>Game Result: @Model["result"]</h2>
 
 <a href="/playerone">Play Another Round</a><br>
 <a href="/">New Players</a>

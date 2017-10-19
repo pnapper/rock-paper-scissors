@@ -49,9 +49,10 @@ namespace RockPaperScissors.Controllers
       string PlayerTwoName = _games[1].GetPlayerName();
       string PlayerTwoPlay = _games[1].GetPlayerPlay();
       List<Game> gamesList = Game.GetGames();
-      string _result = Game.ComparePlay()+" ["+PlayerOneName+" chose "+PlayerOnePlay+"] ["+PlayerTwoName+" chose "+PlayerTwoPlay+"]";
+      Dictionary<string, string> myDictionary = new Dictionary<string, string>(){{"p1Name",PlayerOneName},{"p2Name",PlayerTwoName},{"p1Play",PlayerOnePlay},{"p2Play",PlayerTwoPlay},{"result",Game.ComparePlay()}};
+      // string _result = Game.ComparePlay()+" ["+PlayerOneName+" chose "+PlayerOnePlay+"] ["+PlayerTwoName+" chose "+PlayerTwoPlay+"]";
 
-      return View("GameResult", _result);
+      return View("GameResult", myDictionary);
     }
   }
 }
