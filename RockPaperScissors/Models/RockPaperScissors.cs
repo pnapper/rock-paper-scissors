@@ -45,6 +45,7 @@ namespace RockPaperScissors.Models
     {
       return _games;
     }
+
     public static string ComparePlay()
     {
      string Player1Play = _games[0].GetPlayerPlay();

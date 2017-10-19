@@ -10,7 +10,17 @@ namespace RockPaperScissors.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
+      Game.ClearAll();
       return View();
+    }
+
+    [HttpGet("/playerone")]
+    public ActionResult NewRound()
+    {
+      Game Player1 = new Game(Request.Form["Player1Name"]);
+      Game Player2 = new Game(Request.Form["Player2Name"]);
+
+      return View("PlayerOneTurn", Game.GetPlayerOne());
     }
 
 
@@ -35,9 +45,16 @@ namespace RockPaperScissors.Controllers
     public ActionResult GameResult()
     {
       Game.SetPlayerTwoPlay(Request.Form["player2Play"]);
-      Console.WriteLine("player2Play = "+_games[1].GetPlayerPlay());
+      List<Game> _games = Game.GetGames();
+      Console.WriteLine("player2Play = "+ _games[1].GetPlayerPlay());
+      string PlayerOneName = _games[0].GetPlayerName();
+      string PlayerOnePlay = _games[0].GetPlayerPlay();
+      string PlayerTwoName = _games[1].GetPlayerName();
+      string PlayerTwoPlay = _games[1].GetPlayerPlay();
       List<Game> gamesList = Game.GetGames();
-      return View(gamesList);
+      string _result = Game.ComparePlay()+" ["+PlayerOneName+" chose "+PlayerOnePlay+"] ["+PlayerTwoName+" chose "+PlayerTwoPlay+"]";
+
+      return View("GameResult", _result);
     }
   }
 }
