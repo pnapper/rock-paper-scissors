@@ -17,9 +17,6 @@ namespace RockPaperScissors.Controllers
     [HttpGet("/playerone")]
     public ActionResult NewRound()
     {
-      Game Player1 = new Game(Request.Form["Player1Name"]);
-      Game Player2 = new Game(Request.Form["Player2Name"]);
-
       return View("PlayerOneTurn", Game.GetPlayerOne());
     }
 
