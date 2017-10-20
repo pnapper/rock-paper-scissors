@@ -19,7 +19,6 @@ namespace RockPaperScissors.Tests
       Game Player2 = new Game("Daniel", "Scissors");
       List<Game> _thisGames = Game.GetGames();
 
-
       //Act
       string Player1Name = _thisGames[0].GetPlayerName();
       string Player2Name = _thisGames[1].GetPlayerName();
@@ -94,6 +93,22 @@ namespace RockPaperScissors.Tests
       //Assert
       Console.WriteLine("Patrick's Play: " + _thisGames[0].GetPlayerPlay());
       Console.WriteLine("Daniel's Play: " + _thisGames[1].GetPlayerPlay());
+
+    }
+    [TestMethod]
+    public void GetPlayerOneName_()
+    {
+      //Arrange
+      Game Player1 = new Game("Jonathan");
+      Game Player2 = new Game("BEN");
+      Game Player3 = new Game("NOTE");
+      Game Player4 = new Game("TIM");
+      //Act
+      string allPlayerNames = Game.GetPlayerNames();
+
+      //Assert
+      Console.WriteLine( allPlayerNames );
+      // Console.WriteLine("compared to");
 
     }
 

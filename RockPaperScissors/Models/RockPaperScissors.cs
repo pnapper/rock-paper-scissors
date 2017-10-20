@@ -46,6 +46,18 @@ namespace RockPaperScissors.Models
       return _games;
     }
 
+    public static string GetPlayerNames()
+    {
+      string allNames ="";
+      for (int i=0; i < _games.Count; i++)
+      {
+        // allNames = allNames + " " + i.ToString();
+        allNames = allNames + " " + _games[i].GetPlayerName();
+      }
+      return allNames;
+
+    }
+
     public static string ComparePlay()
     {
      string Player1Play = _games[0].GetPlayerPlay();
